@@ -11,7 +11,7 @@ type Element struct {
 	value interface{}
 }
 
-func (s *Stack) pop() (interface{}, error) {
+func (s *Stack) Pop() (interface{}, error) {
 	if s.top == nil {
 		return nil, errors.New("Nothing on the stack to pop!")
 	}
@@ -22,13 +22,13 @@ func (s *Stack) pop() (interface{}, error) {
 	return v, nil
 }
 
-func (s *Stack) push(v interface{}) {
+func (s *Stack) Push(v interface{}) {
 	el := new(Element)
 	el.value = v
 	el.next = s.top
 	s.top = el
 }
 
-func (s *Stack) isEmpty() bool {
+func (s *Stack) IsEmpty() bool {
 	return s.top == nil
 }
