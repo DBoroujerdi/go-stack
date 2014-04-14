@@ -4,15 +4,15 @@ import "testing"
 
 func TestStack(t *testing.T) {
 	var s = new(Stack)
-	s.push(5)
+	s.Push(5)
 
-	v, _ := s.pop()
+	v, _ := s.Pop()
 
 	if v != 5 {
 		t.Error("Expected 5 got ", v)
 	}
 
-	e := s.isEmpty()
+	e := s.IsEmpty()
 	if !e {
 		t.Error("Expected empty stack after pop()")
 	}
@@ -20,26 +20,26 @@ func TestStack(t *testing.T) {
 
 func TestStackMultiple(t *testing.T) {
 	var s = new(Stack)
-	s.push(5)
-	s.push(6)
-	s.push(7)
+	s.Push(5)
+	s.Push(6)
+	s.Push(7)
 
-	e_1, _ := s.pop()
+	e_1, _ := s.Pop()
 	if e_1 != 7 {
 		t.Error("Expected 7 got ", e_1)
 	}
 
-	e_2, _ := s.pop()
+	e_2, _ := s.Pop()
 	if e_2 != 6 {
 		t.Error("Expected 6 got ", e_2)
 	}
 
-	e_3, _ := s.pop()
+	e_3, _ := s.Pop()
 	if e_3 != 5 {
 		t.Error("Expected 5 got ", e_3)
 	}
 
-	e := s.isEmpty()
+	e := s.IsEmpty()
 	if !e {
 		t.Error("Expected empty stack after pop()")
 	}
@@ -47,7 +47,7 @@ func TestStackMultiple(t *testing.T) {
 
 func TestPopOnEmptyStack(t *testing.T) {
 	var s = new(Stack)
-	val, err := s.pop()
+	val, err := s.Pop()
 
 	if val != nil {
 		t.Error("Top item on empty stack expected nil but was ", val)
