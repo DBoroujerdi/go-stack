@@ -32,3 +32,15 @@ func (s *Stack) Push(v interface{}) {
 func (s *Stack) IsEmpty() bool {
 	return s.top == nil
 }
+
+func (s *Stack) Size() int {
+	size := 0
+	var next *Element = s.top
+
+	for next != nil {
+		size++
+		next = next.next
+	}
+
+	return size
+}

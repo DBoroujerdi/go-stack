@@ -61,3 +61,35 @@ func TestPopOnEmptyStack(t *testing.T) {
 		t.Error("Error message not as expected. Actual =", err.Error())
 	}
 }
+
+func TestStackSize(t *testing.T) {
+	var s = new(Stack)
+
+	if s.Size() != 0 {
+		t.Error("Stack expected to be empty but had size =", s.Size())
+	}
+
+	s.Push('c')
+
+	if s.Size() != 1 {
+		t.Error("Stack expected to be size 1, but was=", s.Size())
+	}
+
+	s.Push('u')
+
+	if s.Size() != 2 {
+		t.Error("Stack expected to be size 2, but was=", s.Size())
+	}
+
+	s.Push('n')
+
+	if s.Size() != 3 {
+		t.Error("Stack expected to be size 3, but was=", s.Size())
+	}
+
+	s.Push('t')
+
+	if s.Size() != 4 {
+		t.Error("Stack expected to be size 4, but was=", s.Size())
+	}
+}
